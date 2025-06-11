@@ -27,11 +27,7 @@ public class AuthController {
   }
     @PostMapping("/public/login")
     public ResponseEntity<?> AuthenticateUser(@RequestBody AuthRequest authRequest){
-        if(userService.authenticate(authRequest)){
-            return ResponseEntity.ok("Login Success");
-        }else{
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
+      return ResponseEntity.ok(userService.authenticate(authRequest));
     }
 
 }
