@@ -1,18 +1,20 @@
 package com.kamalesh.server.security.jwt;
 
-import com.kamalesh.server.services.UserDetailsImp;
+import com.kamalesh.server.services.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
 import java.util.stream.Collectors;
 
+@Component
 public class JwtUtils {
     //Authorization Header >Bearer< Token>
     @Value("${jwt.secret}")
@@ -26,7 +28,7 @@ public class JwtUtils {
         }
         return null;
     }
-    public String generateToken(UserDetailsImp userDetails){
+    public String generateToken(UserDetailsImpl userDetails){
         String userName=userDetails.getUsername();
         String roles=userDetails.getAuthorities().stream()
                 .map(authority->authority.getAuthority())
