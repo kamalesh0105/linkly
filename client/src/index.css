@@ -1,3 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@layer utilities {
+  /* Background gradients */
+  .bg-custom-gradient {
+    background-image: linear-gradient(to right, #3b82f6, #9333ea);
+  }
+  .bg-custom-gradient-2 {
+    background-image: linear-gradient(to left, #3b82f6, #f43f5e);
+  }
+  .bg-card-gradient {
+    background-image: linear-gradient(to right, #38b2ac, #4299e1);
+  }
+
+  /* Custom Colors */
+  .bg-navbarColor {
+    background-color: #ffffff;
+  }
+  .bg-btnColor {
+    background-color: #3364F7;
+  }
+  .text-linkColor {
+    color: #2a5bd7;
+  }
+
+  /* Custom Shadows */
+  .shadow-custom {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  .shadow-right {
+    box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Fonts */
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+  .font-montserrat {
+    font-family: 'Montserrat';
+  }
+}
