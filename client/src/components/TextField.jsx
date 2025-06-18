@@ -40,6 +40,13 @@ const TextField = ({
                     value: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+com+$/,
                     message: "Invalid email",
                   }
+                :
+                type=="password"
+                ?{
+
+                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                  message: "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character",
+                }
                 : type === "url"
                 ? {
                     value:

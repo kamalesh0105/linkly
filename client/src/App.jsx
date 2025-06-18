@@ -4,6 +4,7 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Signup from './pages/Signup';
 const  App=()=>{
 
   return (
@@ -13,6 +14,7 @@ const  App=()=>{
         <Routes>
           <Route path='/' element={<Hero />}></Route>
           <Route path='/about' element={<About />}></Route>
+          <Route path='/signup' element={<Signup/>}></Route>
         </Routes>
         <Footer/>
       </Router>
