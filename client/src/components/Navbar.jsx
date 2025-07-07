@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import {useStoreContext} from '../contextApi/ContextApi';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const {token,setToken}=useStoreContext();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+  const onLogOutHandler = () => {
+    setToken(null);
+    localStorage.removeItem("JWT_TOKEN");
+    navigate("/login");
+  };
 
   const navLinkClass = "px-3 py-1 rounded-md bg-gray-900 text-white";
 
@@ -23,8 +31,9 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           <Link to="/" className={navLinkClass}>Home</Link>
           <Link to="/about" className={navLinkClass}>About</Link>
-          <Link to="/signup" className={navLinkClass}>Signup</Link>
-          <Link to="/logout" className={navLinkClass}>Logout</Link>
+           <Link to="/dashboard" className={navLinkClass}>Dashboard</Link>
+          {!token && (<Link to="/login" className={navLinkClass}>Signin</Link>)}
+          {token && (<Link to="/" onClick={onLogOutHandler} className={navLinkClass}>Logout</Link>)}
         </div>
 
         {/* Hamburger Icon */}

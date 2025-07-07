@@ -1,7 +1,12 @@
 import React from 'react'
 import {motion} from "framer-motion" 
 import Card from '../components/Card'
+import { useNavigate } from 'react-router-dom'
 function Hero() {
+  const navigate = useNavigate();
+  const dashBoardNavigateHandler = () => {
+    navigate('/dashboard');
+  };
   return (
      <div className="min-h-[calc(100vh-64px)]s bg-gray-50 lg:px-14 sm:px-8 px-4">
       <div className="lg:flex-row flex-col lg:py-12   pt-16   lg:gap-10 gap-8 flex justify-between items-center">
@@ -32,6 +37,7 @@ function Hero() {
                 y: 0,
               }}
               viewport={{ once: true }}
+                onClick={dashBoardNavigateHandler}
               transition={{ duration: 0.8 }}
               className="bg-custom-gradient  w-40 text-white rounded-md  py-2"
             >
@@ -45,7 +51,7 @@ function Hero() {
               }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              // onClick={dashBoardNavigateHandler}
+              onClick={dashBoardNavigateHandler}
               className="border-btnColor border w-40 text-btnColor rounded-md  py-2 "
             >
               Create Short Link
