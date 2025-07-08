@@ -20,7 +20,7 @@ const AppRouter=()=>{
           <Route path='/' element={<Hero />}/>
           <Route path='/about' element={<About />}/>
            <Route path="/s/:url" element={<ShortenUrlPage />} />
-         <Route path="/signup" element={<PrivateRoute publicPage={true}><Signup /></PrivateRoute>} />
+         <Route path="/register" element={<PrivateRoute publicPage={true}><Signup /></PrivateRoute>} />
           <Route path="/login" element={<PrivateRoute publicPage={true}><Signin /></PrivateRoute>} />
           
         <Route path="/dashboard" element={ <PrivateRoute publicPage={false}><DashboardLayout /></PrivateRoute>} />

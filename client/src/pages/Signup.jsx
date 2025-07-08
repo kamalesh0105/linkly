@@ -30,7 +30,7 @@
                 );
                 reset();
                 toast.success("Registration Successful!");
-                setTimeout(() => navigate("/signin"), 1000);
+                setTimeout(() => navigate("/login"), 1000);
             } catch (error) {
                 console.log(error);
                 toast.error("Registeration Failed!")
@@ -85,7 +85,7 @@
                 </button>
                 <p className='text-center font-semibold text-sm text-slate-700 mt-6'>
                     Already have an Account?
-                    <Link to={"/signin"} className='font-semibold underline hover:text-black'><span className='text-[#3364F7]'>Signin</span></Link>
+                    <Link to={"/login"} className='font-semibold underline hover:text-black'><span className='text-[#3364F7]'>Signin</span></Link>
                 </p>
             </div>
             
